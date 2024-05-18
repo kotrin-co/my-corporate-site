@@ -1,15 +1,11 @@
 'use client'
 
 import { MotionWrapper } from '@/components/Motion'
-import { Card } from '@/components/ui/card'
-import { useRouter } from 'next/navigation'
 import { useEffect, type FC } from 'react'
 
 export const TopPage: FC = () => {
-  const router = useRouter()
 
   useEffect(() => {
-    console.log('router', router)
     const setImageContainerHeight = () => {
       const img = document.querySelector<HTMLImageElement>(
         '#image-container img',
@@ -44,11 +40,6 @@ export const TopPage: FC = () => {
             デジタルの力で成長の可能性を解き放つ
           </div>
         </div>
-      </div>
-
-      <div className="md:pl-10">
-        <div className="font-black md:text-6xl">News</div>
-        <Card className="h-[400px] w-[350px]">hello</Card>
       </div>
     </MotionWrapper>
   )

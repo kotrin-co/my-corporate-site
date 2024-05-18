@@ -17,11 +17,15 @@ import { Input } from '@/components/ui/input'
 import { Textarea } from '@/components/ui/textarea'
 import { Button } from '@/components/ui/button'
 import { zodResolver } from '@hookform/resolvers/zod'
-import type { FC } from 'react'
+import { type FC, useState } from 'react'
 import { useForm } from 'react-hook-form'
 import { sendMail } from '@/actions/contact/SendMail'
+import { LoadingSpinner } from '@/components/LoadingSpinner'
 
 const ContactPage: FC = () => {
+  const [isLoading, setIsLoading] = useState(false)
+  const [accepted, setAccepted] = useState(false)
+
   const defaultValues = {
     name: '',
     email: '',
@@ -34,9 +38,14 @@ const ContactPage: FC = () => {
   })
 
   const onSubmit = async (values: FormSchema) => {
-    console.log('values1', values)
-    const res = await sendMail(values)
-    console.log('res', res)
+    try {
+      setIsLoading(true)
+      await sendMail(values)
+    } catch (err) {
+      alert('送信に失敗しました')
+    }
+    setIsLoading(false)
+    setAccepted(true)
   }
 
   return (
@@ -120,12 +129,22 @@ const ContactPage: FC = () => {
               </div>
 
               <div className="mt-8 text-center">
-                <Button
-                  type="submit"
-                  className="w-60 bg-blue-500 hover:bg-blue-900"
-                >
-                  送信
-                </Button>
+                {!accepted && (
+                  <Button
+                    type="submit"
+                    className="w-60 bg-blue-500 hover:bg-blue-900"
+                    disabled={isLoading}
+                  >
+                    {isLoading ? <LoadingSpinner /> : '送信'}
+                  </Button>
+                )}
+                {accepted && (
+                  <div className="text-xl">
+                    お問合せありがとうございます！
+                    <br />
+                    内容を確認の上、ご返信差し上げます。
+                  </div>
+                )}
               </div>
             </form>
           </Form>
