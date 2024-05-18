@@ -4,7 +4,6 @@ import { MotionWrapper } from '@/components/Motion'
 import { useEffect, type FC } from 'react'
 
 export const TopPage: FC = () => {
-
   useEffect(() => {
     const setImageContainerHeight = () => {
       const img = document.querySelector<HTMLImageElement>(
@@ -16,7 +15,7 @@ export const TopPage: FC = () => {
       }
     }
 
-    if (window.innerWidth > 768) {
+    if (typeof window !== 'undefined' && window.innerWidth > 768) {
       setImageContainerHeight()
 
       return () => {
