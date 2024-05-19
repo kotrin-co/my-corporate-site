@@ -60,7 +60,7 @@ export const Header: FC = () => {
                 </DrawerHeader>
 
                 <div className="flex flex-col items-center">
-                  <DrawerClose asChild className="py-12">
+                  <DrawerClose asChild className="py-10">
                     <Button
                       asChild
                       variant="link"
@@ -69,7 +69,7 @@ export const Header: FC = () => {
                       <Link href="/">Home</Link>
                     </Button>
                   </DrawerClose>
-                  <DrawerClose asChild className="py-12">
+                  <DrawerClose asChild className="py-10">
                     <Button
                       asChild
                       variant="link"
@@ -78,7 +78,7 @@ export const Header: FC = () => {
                       <Link href="/about">About</Link>
                     </Button>
                   </DrawerClose>
-                  <DrawerClose asChild className="py-12">
+                  <DrawerClose asChild className="py-10">
                     <Button
                       asChild
                       variant="link"
@@ -87,7 +87,7 @@ export const Header: FC = () => {
                       <Link href="/services">Services</Link>
                     </Button>
                   </DrawerClose>
-                  <DrawerClose asChild className="py-12">
+                  <DrawerClose asChild className="py-10">
                     <Button
                       asChild
                       variant="link"
@@ -96,7 +96,7 @@ export const Header: FC = () => {
                       <Link href="/articles">Atricles</Link>
                     </Button>
                   </DrawerClose>
-                  <DrawerClose asChild className="py-12">
+                  <DrawerClose asChild className="py-10">
                     <Button
                       asChild
                       variant="link"
