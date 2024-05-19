@@ -7,6 +7,13 @@ import {
   CardHeader,
   CardTitle,
 } from '@/components/ui/card'
+// import {
+//   Carousel,
+//   CarouselContent,
+//   CarouselItem,
+//   CarouselNext,
+//   CarouselPrevious,
+// } from '@/components/ui/carousel'
 import type { FC } from 'react'
 import { useEffect, useState } from 'react'
 
@@ -123,10 +130,45 @@ const ServicesPage: FC = () => {
         </div>
 
         <div className="mt-8 text-2xl font-black underline md:text-3xl">
+          Solutions
+        </div>
+
+        <div className="text-md mt-4 font-black md:text-xl">
+          開発実績の例 → Coming Soon <br />
+          （お問合せください）
+        </div>
+
+        {/* <Carousel className="mt-4 w-full">
+          <CarouselContent>
+            {Array.from({ length: 5 }).map((_, index) => (
+              <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
+                <div className="p-1">
+                  <Card>
+                    <CardHeader>
+                      <CardTitle>予約システム</CardTitle>
+                      <CardDescription>
+                        データ活用、マーケティングを行うための分析の仕組みを実装いたします。
+                      </CardDescription>
+                      <img
+                        src="/analytics.png"
+                        alt="analytics"
+                        className="rounded object-cover"
+                      />
+                    </CardHeader>
+                  </Card>
+                </div>
+              </CarouselItem>
+            ))}
+          </CarouselContent>
+          <CarouselPrevious />
+          <CarouselNext />
+        </Carousel> */}
+
+        <div className="mt-8 text-2xl font-black underline md:text-3xl">
           Technologies
         </div>
 
-        <div className="mt-4 text-xl font-black md:text-xl">
+        <div className="text-md mt-4 font-black md:text-xl">
           様々な技術を駆使し、フルスタックにシステム開発を行います。
         </div>
 

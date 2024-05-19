@@ -2,6 +2,7 @@ import { Header } from '@/components/Layout'
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import './globals.css'
+import { GoogleAnalytics } from '@next/third-parties/google'
 
 import { cn } from '@/lib/utils'
 
@@ -28,6 +29,7 @@ export default function RootLayout({
         <Header />
         <main className="px-4 pt-40 md:pt-60">{children}</main>
       </body>
+      <GoogleAnalytics gaId={process.env.GA_ID ?? ''} />
     </html>
   )
 }

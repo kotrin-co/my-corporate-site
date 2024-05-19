@@ -35,7 +35,7 @@ export const Header: FC = () => {
             <Link href="/services">Services</Link>
           </Button>
           <Button asChild variant="link" className="text-xl text-white">
-            <Link href="/blog">Blog</Link>
+            <Link href="/articles">Atricles</Link>
           </Button>
           <Button asChild variant="link" className="text-xl text-white">
             <Link href="/contact">Contact</Link>
@@ -93,7 +93,7 @@ export const Header: FC = () => {
                       variant="link"
                       className="text-2xl text-white"
                     >
-                      <Link href="/blog">Blog</Link>
+                      <Link href="/articles">Atricles</Link>
                     </Button>
                   </DrawerClose>
                   <DrawerClose asChild className="py-12">
