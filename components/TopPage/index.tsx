@@ -15,14 +15,15 @@ export const TopPage: FC = () => {
       }
     }
 
-    if (typeof window !== 'undefined' && window.innerWidth > 768) {
+    if (window.innerWidth > 768) {
       setImageContainerHeight()
 
       return () => {
         window.removeEventListener('resize', setImageContainerHeight)
       }
     }
-  }, [window.history])
+  }, [])
+
   return (
     <MotionWrapper>
       <div className="relative" id="image-container">
