@@ -1,19 +1,17 @@
 'use client'
 
 import { LeftToRightMotion, MotionWrapper } from '@/components/Motion'
+import { Card, CardHeader, CardTitle } from '@/components/ui/card'
 import {
-  Card,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from '@/components/ui/card'
-// import {
-//   Carousel,
-//   CarouselContent,
-//   CarouselItem,
-//   CarouselNext,
-//   CarouselPrevious,
-// } from '@/components/ui/carousel'
+  Table,
+  TableBody,
+  TableCaption,
+  TableCell,
+  TableFooter,
+  TableHead,
+  TableHeader,
+  TableRow,
+} from '@/components/ui/table'
 import type { FC } from 'react'
 import { useEffect, useState } from 'react'
 
@@ -32,10 +30,10 @@ const ServicesPage: FC = () => {
         <div className="text-3xl font-black md:text-6xl">Services</div>
       </LeftToRightMotion>
       <MotionWrapper>
-        <div className="mt-8 text-2xl font-black underline md:text-3xl">
-          Contents
+        <div className="mt-8 text-lg md:text-2xl font-black md:text-3xl">
+          Webシステムに関することは何でもご相談ください！
         </div>
-        <div className="mt-8 grid grid-cols-1 gap-4 md:grid-cols-3">
+        {/* <div className="mt-8 grid grid-cols-1 gap-4 md:grid-cols-3">
           <div className="grid-item">
             <Card>
               <CardHeader>
@@ -127,15 +125,72 @@ const ServicesPage: FC = () => {
               </CardHeader>
             </Card>
           </div>
-        </div>
+        </div> */}
 
         <div className="mt-8 text-2xl font-black underline md:text-3xl">
           Solutions
         </div>
 
         <div className="text-md mt-4 font-black md:text-xl">
-          開発実績の例 → Coming Soon <br />
-          （お問合せください）
+          （実績一例）
+          <Table>
+            <TableBody className="md:text-xl">
+              <TableRow>
+                <TableCell>DWHの構築</TableCell>
+                <TableCell>
+                  - 大規模データ集約システム <br />
+                  - 任意フォーマットによるデータアップロード <br />-
+                  定型によるデータダウンロード
+                </TableCell>
+              </TableRow>
+              <TableRow>
+                <TableCell>LINE APIを用いたシステム開発</TableCell>
+                <TableCell>
+                  - LINEによる予約システム <br />
+                  - LINEをプラットフォームとした画像、動画配信システム <br />-
+                  LINEによる顧客管理およびマーケティングツール開発
+                </TableCell>
+              </TableRow>
+              <TableRow>
+                <TableCell>決済システム</TableCell>
+                <TableCell>
+                  - クレジットカード決済システム
+                  <br />
+                  - サブスクリプション課金システム
+                  <br />- PayPay課金システム
+                </TableCell>
+              </TableRow>
+              <TableRow>
+                <TableCell>ウェブトラッキング</TableCell>
+                <TableCell>- ウェブサイトにおける顧客の行動分析</TableCell>
+              </TableRow>
+              <TableRow>
+                <TableCell>ECサイト構築</TableCell>
+                <TableCell>- ShopifyなどECサイト構築</TableCell>
+              </TableRow>
+              <TableRow>
+                <TableCell>クラウドシステム診断</TableCell>
+                <TableCell>
+                  - コスト診断および最適化
+                  <br />- セキュリティ診断
+                </TableCell>
+              </TableRow>
+              <TableRow>
+                <TableCell>機械学習</TableCell>
+                <TableCell>
+                  - 教師データあり機械学習による予測モデル構築
+                  <br />
+                </TableCell>
+              </TableRow>
+              <TableRow>
+                <TableCell>メンタリング</TableCell>
+                <TableCell>
+                  - システム開発並走
+                  <br />- スポットレクチャー
+                </TableCell>
+              </TableRow>
+            </TableBody>
+          </Table>
         </div>
 
         {/* <Carousel className="mt-4 w-full">
@@ -169,7 +224,7 @@ const ServicesPage: FC = () => {
         </div>
 
         <div className="text-md mt-4 font-black md:text-xl">
-          様々な技術を駆使し、フルスタックにシステム開発を行います。
+          各種技術に対応いたします。
         </div>
 
         <div className="mt-8 grid grid-cols-1 gap-4 pb-16 md:grid-cols-3">

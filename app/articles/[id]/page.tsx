@@ -2,8 +2,8 @@ import { fetchArticles, fetchArticleDetail } from '@/actions/articles'
 import type { FC } from 'react'
 import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
-import parse from 'html-react-parser'
 import { format } from 'date-fns'
+import 'highlight.js/styles/a11y-light.css'
 
 export interface Props {
   params: {
@@ -13,9 +13,10 @@ export interface Props {
 
 export const generateMetadata = async (props: Props): Promise<Metadata> => {
   const id = props.params.id
-  const blog = await fetchArticleDetail(id)
+  const article = await fetchArticleDetail(id)
   return {
-    title: blog.title,
+    title: article.title,
+    description: article.description,
   }
 }
 
@@ -36,7 +37,7 @@ const ArticlePage: FC<Props> = async ({ params }) => {
   }
 
   return (
-    <article className="md:px-60">
+    <article className="md:px-80">
       <img
         src={article.eyecatch?.url ?? '/no-image.png'}
         alt="アイキャッチ"
@@ -50,7 +51,10 @@ const ArticlePage: FC<Props> = async ({ params }) => {
         {format(new Date(article.updatedAt), 'yyyy年M月d日')}
       </div>
 
-      <div className="article mt-8">{parse(article.content)}</div>
+      <div
+        className="content"
+        dangerouslySetInnerHTML={{ __html: article.content }}
+      />
     </article>
   )
 }

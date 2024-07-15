@@ -49,7 +49,7 @@ const ContactPage: FC = () => {
   }
 
   return (
-    <div className="md:px-[600px]">
+    <div className="md:px-[600px] mb-8">
       <MotionWrapper>
         <div className="text-3xl font-black md:text-6xl">Contact</div>
         <div className="mt-4">

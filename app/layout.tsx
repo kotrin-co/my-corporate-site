@@ -9,8 +9,8 @@ import { cn } from '@/lib/utils'
 const inter = Inter({ subsets: ['latin'], variable: '--font-sans' })
 
 export const metadata: Metadata = {
-  title: 'Digitaro',
-  description: 'This is Digitaros corporate site.',
+  title: 'AnyDigi',
+  description: 'This is AnyDigis corporate site.',
 }
 
 export default function RootLayout({
@@ -27,7 +27,7 @@ export default function RootLayout({
         )}
       >
         <Header />
-        <main className="px-4 pt-40 md:pt-60">{children}</main>
+        <main className="px-4 pt-40">{children}</main>
       </body>
       <GoogleAnalytics gaId={process.env.GA_ID ?? ''} />
     </html>
