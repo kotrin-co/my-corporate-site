@@ -30,7 +30,7 @@ const ServicesPage: FC = () => {
         <div className="text-3xl font-black md:text-6xl">Services</div>
       </LeftToRightMotion>
       <MotionWrapper>
-        <div className="mt-8 text-lg md:text-2xl font-black md:text-3xl">
+        <div className="mt-8 text-lg md:text-2xl font-black">
           Webシステムに関することは何でもご相談ください！
         </div>
         {/* <div className="mt-8 grid grid-cols-1 gap-4 md:grid-cols-3">

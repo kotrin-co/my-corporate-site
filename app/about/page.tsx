@@ -44,7 +44,6 @@ const AboutPage: FC = () => {
           </Badge>
           <div className="ml-6 mt-6 font-semibold">
             <Table>
-              <TableCaption></TableCaption>
               <TableBody className="md:text-xl">
                 <TableRow>
                   <TableCell>会社名</TableCell>
