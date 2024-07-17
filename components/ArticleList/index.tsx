@@ -21,7 +21,7 @@ export const ArticleList: FC<Props> = ({ contents, categoryName }) => {
       <div className="md:text-xl text-center font-bold">
         {categoryName ? `${categoryName}の記事一覧` : '記事一覧'}
       </div>
-      <div className="mt-4 grid grid-cols-1 gap-6 md:grid-cols-2 md:px-60">
+      <div className="mt-10 grid grid-cols-1 gap-6 md:grid-cols-2 md:px-60">
         {contents.map((article) => (
           <Link href={`/articles/${article.id}`} key={article.id}>
             <Card>

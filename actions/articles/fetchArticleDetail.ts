@@ -11,13 +11,15 @@ export const fetchArticleDetail = async (
   const data = await client.getListDetail<Article>({
     customRequestInit: {
       next: {
-        revalidate: 60,
+        revalidate: 0,
       },
     },
     endpoint: 'articles',
     contentId,
     queries,
   })
+
+  console.log('data', data.content)
 
   const codeBlockRegex =
     /<pre><code class="language-([^"]+)">([\s\S]*?)<\/code><\/pre>/g

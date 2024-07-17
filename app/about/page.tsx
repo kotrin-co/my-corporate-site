@@ -55,7 +55,7 @@ const AboutPage: FC = () => {
                 </TableRow>
                 <TableRow>
                   <TableCell>所在地</TableCell>
-                  <TableCell>東京都渋谷区</TableCell>
+                  <TableCell>東京都渋谷区渋谷3-1-9 YAZAWAビル3階</TableCell>
                 </TableRow>
                 <TableRow>
                   <TableCell>代表</TableCell>

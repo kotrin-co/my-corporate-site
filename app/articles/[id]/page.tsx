@@ -4,6 +4,9 @@ import type { FC } from 'react'
 import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 import { format } from 'date-fns'
+import { CategoryList } from '@/components/CategoryList'
+import { fetchCategories } from '@/actions/articles/fetchCategories'
+import { use } from 'react'
 
 export interface Props {
   params: {
@@ -29,33 +32,45 @@ export const generateStaticParams = async () => {
   })
 }
 
-const ArticlePage: FC<Props> = async ({ params }) => {
-  const article = await fetchArticleDetail(params.id)
+const ArticlePage: FC<Props> = ({ params }) => {
+  const article = use(fetchArticleDetail(params.id))
+  const categoryResponse = use(fetchCategories())
 
   if (!article) {
     return notFound()
   }
 
   return (
-    <article className="md:px-80">
-      <img
-        src={article.eyecatch?.url ?? '/no-image.png'}
-        alt="アイキャッチ"
-        className="object-cove max-h-48 rounded-lg md:max-h-96"
-      />
-      <div className="mt-4 text-2xl font-bold md:mt-8 md:text-5xl">
-        {article.title}
+    <>
+      <div className="flex-2 md:w-4/5">
+        <div className="flex justify-center">
+          <img
+            src={article.eyecatch?.url ?? '/no-image.png'}
+            alt="アイキャッチ"
+            className="object-cover max-h-48 rounded-lg md:max-h-96"
+          />
+        </div>
       </div>
+      <article className="md:px-80 flex">
+        <div className="flex-2 w-full md:w-4/5 px-20">
+          <div className="mt-4 text-2xl font-bold md:mt-8 md:text-5xl">
+            {article.title}
+          </div>
 
-      <div className="text-md text-right md:text-lg">
-        {format(new Date(article.updatedAt), 'yyyy年M月d日')}
-      </div>
+          <div className="text-md text-right md:text-lg mt-6">
+            {format(new Date(article.updatedAt), 'yyyy年M月d日')}
+          </div>
 
-      <div
-        className="content"
-        dangerouslySetInnerHTML={{ __html: article.content }}
-      />
-    </article>
+          <div
+            className="content md:my-16 my-6"
+            dangerouslySetInnerHTML={{ __html: article.content }}
+          />
+        </div>
+        <div className="hidden md:block flex-1 w-1/5 pl-16 mt-40">
+          <CategoryList categories={categoryResponse.contents} />
+        </div>
+      </article>
+    </>
   )
 }
 

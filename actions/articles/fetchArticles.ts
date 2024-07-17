@@ -7,7 +7,7 @@ export const fetchArticles = async (queries?: MicroCMSQueries) => {
   return await client.getList<Article>({
     customRequestInit: {
       next: {
-        revalidate: 60, // キャッシュ
+        revalidate: 0,
       },
     },
     endpoint: 'articles',
