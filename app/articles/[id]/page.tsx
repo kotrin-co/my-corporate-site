@@ -1,9 +1,9 @@
+// 'use client'
 import { fetchArticles, fetchArticleDetail } from '@/actions/articles'
 import type { FC } from 'react'
 import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 import { format } from 'date-fns'
-import 'highlight.js/styles/a11y-light.css'
 
 export interface Props {
   params: {
