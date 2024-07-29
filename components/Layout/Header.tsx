@@ -26,7 +26,14 @@ export const Header: FC = () => {
         }}
         className="mt-10 flex justify-between px-10 md:px-40"
       >
-        <div className="text-2xl font-bold md:text-4xl">AnyDigi</div>
+        <div className="text-2xl font-bold md:text-4xl cursor-pointer">
+          {/* <img
+            src="/logo1.svg"
+            alt="logo"
+            className="size-20"
+          /> */}
+          <Link href="/">AnyDigi</Link>
+        </div>
         <div className="hidden md:flex">
           <Button asChild variant="link" className="text-xl text-white">
             <Link href="/">Home</Link>

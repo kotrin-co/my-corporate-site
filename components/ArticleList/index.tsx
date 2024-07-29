@@ -24,12 +24,12 @@ export const ArticleList: FC<Props> = ({ contents, categoryName }) => {
       <div className="mt-10 grid grid-cols-1 gap-6 md:grid-cols-2 md:px-60">
         {contents.map((article) => (
           <Link href={`/articles/${article.id}`} key={article.id}>
-            <Card>
+            <Card className="min-h-80">
               <CardHeader className="-mt-2 flex">
                 <CardTitle className="w-full truncate text-center text-lg font-semibold">
                   {article.title}
                 </CardTitle>
-                <div className="flex h-[150px] w-full items-center justify-center">
+                <div className="flex h-[100px] w-full items-center justify-center">
                   <img
                     src={article.eyecatch?.url}
                     alt={article.title}

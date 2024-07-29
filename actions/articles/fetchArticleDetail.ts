@@ -4,6 +4,8 @@ import { client } from './fetchClient'
 import { codeToHtml } from 'shiki'
 import * as he from 'he'
 
+const ISR_CACHE_TIME = process.env.ISR_CACHE_TIME ?? 0
+
 export const fetchArticleDetail = async (
   contentId: string,
   queries?: MicroCMSQueries,
@@ -11,7 +13,7 @@ export const fetchArticleDetail = async (
   const data = await client.getListDetail<Article>({
     customRequestInit: {
       next: {
-        revalidate: 0,
+        revalidate: Number(ISR_CACHE_TIME),
       },
     },
     endpoint: 'articles',
