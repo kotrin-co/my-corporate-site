@@ -34,11 +34,11 @@ export const TopPage: FC = () => {
         />
         <div className="relative inset-y-0 left-0 flex w-full flex-col md:pl-40">
           <div className="text-center text-2xl font-extrabold md:text-left md:text-5xl">
-            For the Future, Any Digital Solution!
+            お客さまの「やりたいこと」実現する
           </div>
-          <div className="text-md text-center font-bold md:mt-4 md:text-left md:text-3xl">
+          {/* <div className="text-md text-center font-bold md:mt-4 md:text-left md:text-3xl">
             デジタルで紡ぐ、未来の物語
-          </div>
+          </div> */}
         </div>
       </div>
     </MotionWrapper>
