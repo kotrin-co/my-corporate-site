@@ -57,10 +57,10 @@ const AboutPage: FC = () => {
                   <TableCell>所在地</TableCell>
                   <TableCell>東京都渋谷区渋谷3-1-9 YAZAWAビル3階</TableCell>
                 </TableRow>
-                <TableRow>
+                {/* <TableRow>
                   <TableCell>代表</TableCell>
                   <TableCell>中川 健太郎</TableCell>
-                </TableRow>
+                </TableRow> */}
                 <TableRow>
                   <TableCell>事業内容</TableCell>
                   <TableCell>
